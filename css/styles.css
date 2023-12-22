@@ -2,15 +2,20 @@
 @import "./normalize.css";
 
 :root {
+  --primary-color-hue: 255;
+  --dark-color-lightness: 17%;
+  --light-color-lightness: 95%;
+  --white-color-lightness: 100%;
+
   --color-black: hsl(252, 30%, 10%);
   --color-danger: hsl(0, 95%, 65%);
-  --color-dark: hsl(252, 30%, 17%);
+  --color-dark: hsl(252, 30%, var(--dark-color-lightness));
   --color-gray: hsl(252, 15%, 65%);
-  --color-light: hsl(252, 30%, 95%);
-  --color-primary: hsl(252, 75%, 60%);
+  --color-light: hsl(252, 30%, var(--light-color-lightness));
+  --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
   --color-secondary: hsl(252, 100%, 90%);
   --color-success: hsl(120, 95%, 65%);
-  --color-white: hsl(252, 30%, 100%);
+  --color-white: hsl(252, 30%, var(--white-color-lightness));
 
   --border-radius: 2rem;
   --card-border-radius: 1rem;
@@ -596,6 +601,7 @@ main .container .right {
   padding: 3rem;
   border-radius: var(--card-border-radius);
   width: 50%;
+  box-shadow: 0 0 1rem var(--color-primary);
 }
 
 /* Font size */
@@ -761,6 +767,10 @@ main .container .right {
   .left .btn {
     display: none;
   }
+
+  .customize-theme .card {
+    width: 80vw;
+  }
 }
 
 /* Media Queries for small tablets and mobile phones */
@@ -802,5 +812,9 @@ main .container .right {
 
   main .container .right {
     display: none;
+  }
+
+  .customize-theme .card {
+    width: 80vw;
   }
 }
