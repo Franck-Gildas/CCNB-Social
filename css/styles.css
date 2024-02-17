@@ -275,7 +275,7 @@ main .container .left .profile {
   background-color: var(--color-white);
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
-  box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60%, 25%);
+  box-shadow: 0 0 2rem var(--color-primary);
   z-index: 9;
   display: none;
 }
@@ -800,7 +800,7 @@ main .container .right {
   }
 
   .left .notifications-popup::before {
-    display: absolute;
+    position: absolute;
     top: 1.3rem;
     left: calc(20rem - 00.6rem);
     display: block;

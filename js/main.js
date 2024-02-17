@@ -25,8 +25,21 @@ const changeActiveItem = () => {
   });
 };
 
+// Remove notification pop up:
+
+const notificationsBox = document.querySelector(".notifications-popup");
+
+const closeNotificationPopUp = (e) => {
+  if (!e.target.closest(".notifications-popup"))
+    notificationsBox.style.display = "none";
+};
+
+document.addEventListener("click", closeNotificationPopUp);
+
 menuItems.forEach((item) => {
-  item.addEventListener("click", () => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+
     changeActiveItem();
 
     item.classList.add("active");
